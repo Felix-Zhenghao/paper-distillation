@@ -1,6 +1,6 @@
 # Research Paper Distillation By Zhenghao Chi
 
-> To see paper recommendation level and tags, visit [here](https://ndro4zkb6p.feishu.cn/docx/FaBXdERDvoleXDxSiMXcMBegnvd?from=from_copylink).
+> To see paper recommendation level and tags, visit the doc on Lark [here](https://ndro4zkb6p.feishu.cn/docx/FaBXdERDvoleXDxSiMXcMBegnvd?from=from_copylink).
 
 ### HumanPlus: Humanoid Shadowing and Imitation from Humans
 
