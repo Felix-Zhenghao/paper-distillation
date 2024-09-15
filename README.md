@@ -75,3 +75,36 @@
 - Utility
 
   1. Some related literatures in appendix: Full related work section & motivation for mimicgen over alternative methods section
+
+### Contrastive Representation Learning
+
+> Weng, Lilian. (May 2021). Contrastive representation learning. Lil’Log. [https://lilianweng.github.io/posts/2021-05-31-contrastive/](https://lilianweng.github.io/posts/2021-05-31-contrastive/).
+
+- Key points
+
+  1. Hard negative samples are needed to improve the model
+  2. What does it mean by 'hard': different label but close in embedding space (thus need to 'drag apart')
+  3. Large batch size is typically needed, so the data is diverse
+- Utility
+
+  1. [Blog post on explaining BYOL and intuition of why contrastive learning](https://imbue.com/research/2020-08-24-understanding-self-supervised-contrastive-learning/): Batch normalization implicitly introduce contrastive learning in BYOL
+  2. Visual data augmentation methods can be checked
+  3. Works on loss function design
+
+### Robot Learning on the Job: Human-in-the-Loop Autonomy and Learning During Deployment
+
+> Liu, H., Nasiriany, S., Zhang, L., Bao, Z., & Zhu, Y. (2022). Robot learning on the job: Human-in-the-loop autonomy and learning during deployment. _arXiv preprint arXiv:2211.08416_.
+
+- General Idea
+
+  1. Enable human intervention during policy deployment to continuously improve the policy
+  2. Weight behavior cloning by data quality approximated by two criteria: First, human interventions are high quality and should be learnt immedietely; Second, trajectory right before intervention is of bad quality
+  3. Label data using classes: demo(initial human demo data), intervention, prev-intervention, robot
+  4. Memory management strategy: LFI - first reject samples from trajectories with the least interventions
+- Limitation
+
+  1. Requires the human to constantly monitor the robot. Should incorporate automated runtime monitoring and error detection strategies.
+  2. Experimental tasks only contain insertion. This is ideal for human intervention, but class labels may have different relative importance in other types of tasks
+- Interesting Points
+
+  1. LFI memory management strategy outperforms the 'keep all' strategy. This is totally a **dataset distillation** method. Also, high quality data may be under-learnt when data size explodes because batch size is limited
