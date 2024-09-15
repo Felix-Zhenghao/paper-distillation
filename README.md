@@ -55,6 +55,8 @@
 
 ### MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations
 
+> Mandlekar, A., Nasiriany, S., Wen, B., Akinola, I., Narang, Y., Fan, L., ... & Fox, D. (2023). Mimicgen: A data generation system for scalable robot learning using human demonstrations. _arXiv preprint arXiv:2310.17596_.
+
 - General Idea
 
   1. Data augmentation paper: generate more data from a few human demonstrations
