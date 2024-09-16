@@ -108,3 +108,28 @@
 - Interesting Points
 
   1. LFI memory management strategy outperforms the 'keep all' strategy. This is totally a **dataset distillation** method. Also, high quality data may be under-learnt when data size explodes because batch size is limited
+
+### RoboCook: Long-Horizon Elasto-Plastic Object Manipulation with Diverse Tools
+
+> Shi, H., Xu, H., Clarke, S., Li, Y., & Wu, J. (2023). Robocook: Long-horizon elasto-plastic object manipulation with diverse tools. _arXiv preprint arXiv:2306.14447_.
+
+- General Idea
+
+  1. Perception: Model surface shape change of elasto-plastic stuff with PointCloud and Graph
+  2. Action parametrization: Parametrize tool usage action to reduce DoF
+  3. Model interaction with elasto-plastic stuff: Goal is to predict how the shape of elasto-plastic stuff will change give an action with a tool. Data collected by robot randomly interact with elasto-plastic stuff and minimize distant between predicted graph and real graph. The result is GNN.
+  4. Self-supervised optimal action policy: Given a,b,c, train a policy to get an action to transfer elasto-plastic stuff between states. Data collected in c is reusable by giving action label and states before&after this action. The policy learns by predicting the action label
+  5. Closed-Loop Control: Given a,b,c,d, choosing tool that can achieve state closest to the goal state -> Do the action -> Get next state -> next loop
+- Limitation
+
+  1. So many learning techniques to achieve Best System Paper Award, CoRL 2023
+- Interesting Point
+
+  1. Describe interaction with elasto-plastic stuff with GNN + Point Cloud
+  2. **Self-supervised policy design enables cheap and fast real-world data collection pipeline**
+  3. Inductive bias of GNN. Train on predicting 2 steps, inference on predicting 15 steps
+  4. Achieved **ultra fast planning speed** compared with previous work
+- Utility
+
+  1. Lots of GNN+PointCloud techniques
+  2. Writing style: Divide sections by problems to be solved and start each section from a problem
