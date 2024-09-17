@@ -139,6 +139,6 @@
 > Adelson, E. H., & Bergen, J. R. (1991). _The plenoptic function and the elements of early vision_ (Vol. 2). Cambridge, MA, USA: Vision and Modeling Group, Media Laboratory, Massachusetts Institute of Technology.
 
 - General Idea
-  1. The whole scene can be represented by a plenoptic function whose parameters are properties that can be directly measured by retina ($x,y,t,\lambda,V_x,V_y,V_z$in the paper - $x,y$are point on a plane in front of the eye position, $t$is time, $\lambda$is wavelength or color, $V_x,V_y,V_z$ are position of the eye)
+  1. The whole scene can be represented by a plenoptic function whose parameters are properties that can be directly measured by retina ( $x,y,t,\lambda,V_x,V_y,V_z$ in the paper - $x,y$ are point on a plane in front of the eye position, $t$ is time, $\lambda$ is wavelength or color, $V_x,V_y,V_z$ are position of the eye)
   2. Creatures **sample** viewpoint in some ways (i.e: moving head) to get an instance of input of the plenoptic function
   3. A sample (viewpoint) can be viewed as chunked Taylor expansion - direct measurement of the local properties of a plenoptic function
