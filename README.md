@@ -142,3 +142,25 @@
   1. The whole scene can be represented by a plenoptic function whose parameters are properties that can be directly measured by retina ( $x,y,t,\lambda,V_x,V_y,V_z$ in the paper - $x,y$ are point on a plane in front of the eye position, $t$ is time, $\lambda$ is wavelength or color, $V_x,V_y,V_z$ are position of the eye)
   2. Creatures **sample** viewpoint in some ways (i.e: moving head) to get an instance of input of the plenoptic function
   3. A sample (viewpoint) can be viewed as chunked Taylor expansion - direct measurement of the local properties of a plenoptic function
+
+### CyberDemo: Augmenting Simulated Human Demonstration for Real-World Dexterous Manipulation
+
+> Wang, J., Qin, Y., Kuang, K., Korkmaz, Y., Gurumoorthy, A., Su, H., & Wang, X. (2024). CyberDemo: Augmenting Simulated Human Demonstration for Real-World Dexterous Manipulation. In _Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition_ (pp. 17952-17963).
+
+- Main Result
+  1. Human demonstration in simulation + augmentation in simulation + fine-tune with real-world demonstration can work.
+
+### AnySkin: Plug-and-play Skin Sensing for Robotic Touch
+
+> Bhirangi, R., Pattabiraman, V., Erciyes, E., Cao, Y., Hellebrekers, T., & Pinto, L. (2024). AnySkin: Plug-and-play Skin Sensing for Robotic Touch. _arXiv preprint arXiv:2409.08276_.
+
+- Main Result
+
+  1. Improve consistency between touch sensor instances
+  2. Tactile-only and LSTM-based slip detection policy achieves 92% accuracy on untouched objects
+  3. [Open-sourced hardware](https://any-skin.github.io)
+- Potential Future Work
+
+  1. More experiment on how much instance-consistency is needed for tactile sensor
+  2. The slippery detection policy is trained on human labelled slipped-or-not data. May check more convenient data collection methods and how to integrate them into normal data collection loops (i.e supervised by visual input and improve itself on-the-fly).
+  3. Tactile algorithm and representation that facilitates truly hard tasks like cloth folding
