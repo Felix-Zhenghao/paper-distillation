@@ -165,7 +165,7 @@
   2. The slippery detection policy is trained on human labelled slipped-or-not data. May check more convenient data collection methods and how to integrate them into normal data collection loops (i.e supervised by visual input and improve itself on-the-fly).
   3. Tactile algorithm and representation that facilitates truly hard tasks like cloth folding
 
-## A Tutorial on Energy-Based Learning
+### A Tutorial on Energy-Based Learning
 
 > LeCun, Y., Chopra, S., Hadsell, R., Ranzato, M., & Huang, F. (2006). A tutorial on energy-based learning. _Predicting structured data_, _1_(0).
 
@@ -173,4 +173,16 @@
   1. The energy-based model learns an energy function $E_\theta(X,Y)$ so that at inference time, given the input $X$ , $argmin_{y\in \mathbb{Y}} E_\theta(X,y)$ is the output. So optimization is needed for inference.
   2. For training, the goal is 'pull up' $E_\theta(X,Y)$ of $y_{wrong}$ and 'pull down' $E_\theta(X,Y)$ of $y_{right}$ . There can be multiple $y_{right}$ .
   3. An idea of loss function is to punish those offending outputs. Offending outputs are $y$ 's that have very low energy so that can be easily detected as good ones. $Loss = E_\theta(X^i,Y^i)+\frac{1}{\beta}log(\int_{y\in\mathbb{Y}}exp\left[-\beta E_\theta(X^i,y)\right])$ is acceptable because $\frac{\partial Loss}{\partial \theta} = \frac{\partial E_\theta(X^i,Y^i)}{\partial \theta} - \int_{y\in\mathbb{Y}} \frac{\partial E_\theta(X^i,y)}{\partial \theta}*P_{\theta}(y|X^i)$ where $P_\theta(y|X^i) = \frac{e^{-\beta E_\theta(X^i,y)}}{\int_{y\in\mathbb{Y}}e^{-\beta E_\theta(X^i,y)}}$ .  So the implication of this loss is to pull down the right answer and meanwhile pull up wrong answers proportion to their 'offending level'.
-  4. $\int_{y\in\mathbb{Y}}e^{-\beta E_\theta(X^i,y)}$ is intractable. This causes instability of training when estimated with negative sampling (i.e: the implicit BC paper). **But the idea of this contrastive loss is inspiring**!!! This is solved by only estimating gradient of energy function $w.r.t $ output variable $\frac{\partial E(X^i,y)}{\partial y} = F_\theta(y|X^i)$ .
+  4. $\int_{y\in\mathbb{Y}}e^{-\beta E_\theta(X^i,y)}$ is intractable. This causes instability of training when estimated with negative sampling (i.e: the implicit BC paper). **But the idea of this contrastive loss is inspiring**!!! This is solved by only estimating gradient of energy function $w.r.t $ output variable $\frac{\partial E(X^i,y)}{\partial y} = F_\theta(y|X^i)$ , which is the idea of diffusion models.
+
+### OpenVLA: An Open-Source Vision-Language-Action Model
+
+> Kim, M. J., Pertsch, K., Karamcheti, S., Xiao, T., Balakrishna, A., Nair, S., ... & Finn, C. (2024). OpenVLA: An Open-Source Vision-Language-Action Model. _arXiv preprint arXiv:2406.09246_.
+
+- Main Idea
+
+  1. Fine-tune a visual-language model with visual encoder + projector + LLM backbone with only one image input using the Open-X dataset.
+- More questions
+
+  1. SigLIP-DinoV2 visual encoder 'gives spatial understanding'. Check this paper: "Prismatic vlms: Investigating the design space of visually-conditioned language models".
+  2. Fine-tuning visual encoder together, rather than freezing it is essential for the perf. The question is what is the difference between the initial visual representation and the fine-tuned representation. Check out.
