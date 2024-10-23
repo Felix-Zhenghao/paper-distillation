@@ -2,6 +2,8 @@
 
 > To see paper recommendation level and tags, visit the doc on Lark [here](https://ndro4zkb6p.feishu.cn/docx/FaBXdERDvoleXDxSiMXcMBegnvd?from=from_copylink).
 
+# Robotics
+
 ### HumanPlus: Humanoid Shadowing and Imitation from Humans
 
 > Fu, Z., Zhao, Q., Wu, Q., Wetzstein, G., & Finn, C. (2024). HumanPlus: Humanoid Shadowing and Imitation from Humans. _arXiv preprint arXiv:2406.10454_.
@@ -186,3 +188,18 @@
 
   1. SigLIP-DinoV2 visual encoder 'gives spatial understanding'. Check this paper: "Prismatic vlms: Investigating the design space of visually-conditioned language models".
   2. Fine-tuning visual encoder together, rather than freezing it is essential for the perf. The question is what is the difference between the initial visual representation and the fine-tuned representation. Check out.
+
+# Fundamental Research of AI
+
+### Were RNNs All We Needed?
+
+> Feng, L., Tung, F., Ahmed, M. O., Bengio, Y., & Hajimirsadegh, H. (2024). Were RNNs All We Needed?. _arXiv preprint arXiv:2410.01201_.
+
+- Main hypothesis
+
+  - The success of Mamba and S4 is because that the proposed hidden state $\hat{h_t}$ does not depend on the past state. That is, the key bone of those RNN models is: $z_t=Z(x_t)$ , $h_{t+1}=(1-z_t)*h_t+z_t*h(x_{t})=(1-z_t)*h_t+z_t*\hat{h_t}$ . Can we achieve similar efficiency and performance using this minimal key bone?
+- Main result
+
+  - Very weak experiment because the tasks are extremely easy and tailored to the author's model.
+  - Reasonable hypothesis. And the model may be useful in specific tasks that are OK with the model's downsides.
+  - Keybone needs more layers because although the first layer capture little global info, upper layers can do that. (trade-off)
