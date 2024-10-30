@@ -239,6 +239,17 @@
   - Reasonable hypothesis. And the model may be useful in specific tasks that are OK with the model's downsides.
   - Keybone needs more layers because although the first layer capture little global info, upper layers can do that. (trade-off)
 
+### Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning
+
+> Nakamoto, M., Zhai, S., Singh, A., Sobol Mark, M., Ma, Y., Finn, C., ... & Levine, S. (2024). Cal-ql: Calibrated offline rl pre-training for efficient online fine-tuning. _Advances in Neural Information Processing Systems_, _36_.
+
+- Main Points
+  1. Scenario is policy initialization using offline RL trained on large dataset and fine-tune on downstream tasks
+  2. Previous CQL has an 'unlearning' phenomenon. Since CQL tends to learn a Q-function $\hat{Q}$ much smaller than true value, at the beginning of the fini-tuning, any exploration can get a better return than $\hat{Q}$ of even the learned best action. Thus, the updated $\hat{Q}$ will have highest value at exploration action and thus 'unlearn' the learned policy.
+  3. The solution is given by calibration. Intuition is to keep $\hat{Q}$ on the right scale during pre-training. For two policies $\pi$ and $\mu$ , $\pi$ is calibrated with respect to the reference policy $\mu$ if $\mathbb{E}_{a \sim \pi} \left[ Q_{\theta}^{\pi}(s, a) \right] \geq \mathbb{E}_{a \sim \mu} \left[ Q^{\mu}(s, a) \right] := V^{\mu}(s), \, \forall s \in D$ .
+  4. Theory and experiments show that a not so good reference policy can have a good calibration effect (because calibration only takes care of the scale of $\hat{Q}$ ). The behavior policy of the large dataset is a good reference, because $Q^{\mu}(s, a)$ can come from crafting reward signal from the success or not signal of the pre-training dataset.
+  5. Simple change of algo!! Good theory with good experiment results!
+
 ### Flow Matching for Generative Model
 
 > Lipman, Y., Chen, R. T., Ben-Hamu, H., Nickel, M., & Le, M. (2022). Flow matching for generative modeling. _arXiv preprint arXiv:2210.02747_.
