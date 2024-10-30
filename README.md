@@ -189,6 +189,20 @@
   1. SigLIP-DinoV2 visual encoder 'gives spatial understanding'. Check this paper: "Prismatic vlms: Investigating the design space of visually-conditioned language models".
   2. Fine-tuning visual encoder together, rather than freezing it is essential for the perf. The question is what is the difference between the initial visual representation and the fine-tuned representation. Check out.
 
+### HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots
+
+- Main Idea
+
+  1. Unify the command space of humanoid robots with various downstream tasks
+- Methods
+
+  1. Train goal-oriented behavior tracking oracle policy and distill. Add mask if the downstream policy is only considered on a subspace of the unified command space.
+- My thoughts
+
+  1. Experiments show it can outperform specified command space or method.
+  2. **The interesting question is how information from one subspace can help the representation of action in another subspace and thus form a more coordinated whole body control. Can we do self-supervised motion prediction and generation in the unified command space**??
+  3. It is still embodiment-specific. The key is it unifies command space of a single embodiment configuration regardless of the downstream tasks.
+
 # Fundamental Research of AI
 
 ### Were RNNs All We Needed?
@@ -203,3 +217,14 @@
   - Very weak experiment because the tasks are extremely easy and tailored to the author's model.
   - Reasonable hypothesis. And the model may be useful in specific tasks that are OK with the model's downsides.
   - Keybone needs more layers because although the first layer capture little global info, upper layers can do that. (trade-off)
+
+### Flow Matching for Generative Model
+
+> Lipman, Y., Chen, R. T., Ben-Hamu, H., Nickel, M., & Le, M. (2022). Flow matching for generative modeling. _arXiv preprint arXiv:2210.02747_.
+
+- Main Question
+
+  - How to gradually transfer a known distribution into another distribution when we only have samples from the latter?
+- Main Idea
+
+  - Define a flow $\phi_t{(x)}$ , where $\phi_o(x)=x$ . Define a time variant vector field $\frac{d}{dt}\phi_t(x)$ . Then, starting from point $x$ sampled from a known distribution, if we follow the vector field (the dynamic of the flow), we can **gradually **move into a new distribution.
