@@ -202,6 +202,27 @@
   1. Experiments show it can outperform specified command space or method.
   2. **The interesting question is how information from one subspace can help the representation of action in another subspace and thus form a more coordinated whole body control. Can we do self-supervised motion prediction and generation in the unified command space**??
   3. It is still embodiment-specific. The key is it unifies command space of a single embodiment configuration regardless of the downstream tasks.
+  4. Many works intentionally avoid high-dim command space by introducing 'end-effector tracking'. Also, high-dim command space is hard for imitation learning. **How to incorporate the unified command space with imitation learning pipeline**?
+
+### Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance
+
+- Main Idea
+
+  1. Test-time search for robots: Re-rank different actions proposed by a pre-trained policy through offline RL
+  2. Pre-trained policy: robot doing task following language command $\pi(a|s_t,l)$ . Dataset: $\{\tau_i,l_i\}_{i=1}^N$ where the former is robot action trajectory and the latter is the language command.
+  3. Re-rank: sample $K$ actions and $a_t \sim \text{Softmax} \left( \frac{Q_{\theta}(s_t, a_1)}{\beta}, \dots, \frac{Q_{\theta}(s_t, a_K)}{\beta} \right)$ . When $\beta \rightarrow 0$ , the algo is more and more greedier.
+- Main results
+
+  1. Very big experiment improvement on some tasks!!
+  2. $K=100$ needs inference time 0.15 second. “Compute-optimal” balance between using the policy and querying the value function is needed. Intuition is the value function query can be done in a more high-level way. **The key question is "on what level should we search" for robots**?
+  3. "Scaling up value function architectures and using more diverse data is a promising direction for future work".
+- Utility
+
+  1. Reward crafting method from arbitrary dataset: "Pre-training for robots: Offline rl enables learning new tasks from a handful of trials".
+  2. New value funciton estimation algo: Cal-QL
+- TODO
+
+  1. **Do experiment on Cal-QL and re-implement this paper.**
 
 # Fundamental Research of AI
 
