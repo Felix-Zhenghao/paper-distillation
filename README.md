@@ -224,6 +224,22 @@
 
   1. **Do experiment on Cal-QL and re-implement this paper.**
 
+### DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning
+
+- Main evolution from MimicGen
+
+  1. Solve the data augmentation of bimanual manipulation by defining three task sync schemas.
+  2. First schema: sequential task. Certain arm objectives must be com- pleted before other objectives can be attempted.  For instance, the left should first put the vegetable into the bowl, then the right arm can put the bowl onto the plate. This sync schema is solved by defining pre-task and post-task constraints.
+  3. Second schema: coordination task. Two arms achieve the shared goal. The actions within subtask must be perfectly sync'ed. For instance, two arms lift a stuff together; or two arms handover a stuff. This is solved by perfectly aligning the subtask conduction of two arms. For handover subtasks, no augmentation is conducted and the handover is done by totally replaying the source demo.
+  4. Third schema: each arm can operate independently of the other arm to achieve different goals. For instance, two arms want to reach different objects. This is solved by giving a separate queue of subtasks for each arm. (I am worried if two arms will collide if treated independently...)
+- Main experiments
+
+  1. Real-world experiment. Only one task is experimented. Human teleoperates robot in the real world and map the demo to sim using digital twin. Data augmentation is done in sim. By augmenting 4 source demos into 40 demos, the success rate goes from 0% to 90% in the real-world.
+  2. Simulation experiment. Bimanual arms, humanoid with grippers and humanoid with dexterous hands are used. To do teleoperation, human-robot calibration is needed by enforcing human to start at a specific pose. 5~10 source demos can become 1k demos. Task success rate can go from 10% to 85%. (Maybe because the number of source demos is too small, so the benchmark performance is too bad...)
+- My thoughts
+
+  1. How can we leverage failed demo during data augmentation? Should inspect why the generated demo may fail. This may be useful to learn representation of critical states through contrastive learning.
+
 # Fundamental Research of AI
 
 ### Were RNNs All We Needed?
