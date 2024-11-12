@@ -264,6 +264,15 @@
   - A lot of collision-avoidance and point tracking methods/packages are introduced in the A.8 appendix and [github repo](https://github.com/huangwl18/ReKep?tab=readme-ov-file#real-world-deployment).
   - **The biggest limitation, IMO, is that the low-level control policy given the keypoints are not very good. The keypoints extraction + constraint generation pipeline is very good**. The next thing is how to get a good low level control policy. MimicGen and imitation learning can be considered joining the pipeline!!!!
 
+### EgoMimic: Scaling Imitation Learning via Egocentric Video
+
+> Kareer, S., Patel, D., Punamiya, R., Mathur, P., Cheng, S., Wang, C., ... & Xu, D. (2024). EgoMimic: Scaling Imitation Learning via Egocentric Video. _arXiv preprint arXiv:2410.24221_.
+
+- Try to use human egocentric data + teleoperation data to train robots. Huge amounts of methods to prevent distribution shifts. For example, use the same ego sensor (Aria) + mask the image with SAM2 + normalize actions.
+- Input masked human & robot ego images + human hand pose traj estimation + robot eef pose traj & joint position data (get through teleoperation). A transformer will encode all data. Loss is human pose prediction error, robot eef pose prediction error and robot joint position prediction error. The control is done in the joint space.
+- Co-training with human hand data benefits a lot. Distribution alignment matters a lot.
+- Utility: check the [Aria](https://facebookresearch.github.io/projectaria_tools/docs/intro) project, academic-use ego-centric hardware.
+
 # Fundamental Research of AI
 
 ### Were RNNs All We Needed?
