@@ -240,6 +240,30 @@
 
   1. How can we leverage failed demo during data augmentation? Should inspect why the generated demo may fail. This may be useful to learn representation of critical states through contrastive learning.
 
+### Data Scaling Laws in Imitation Learning for Robotic Manipulation
+
+> Lin, F., Hu, Y., Sheng, P., Wen, C., You, J., & Gao, Y. (2024). Data Scaling Laws in Imitation Learning for Robotic Manipulation. _arXiv preprint arXiv:2410.18647_.
+
+- Takeaways
+  - The biggest bottleneck of the UMI data collection system is that it uses SLAM to track the camera pose. Therefore, lack of visual features or large objects obstructing the camera's view can lead to invalid UMI data.
+  - Object and environment variety matters. Data quantity only needs to achieve a certain threshold.
+  - Dividing big tasks into small subtasks can be useful for reward crafting.
+
+### Rekep: Spatio-temporal reasoning of relational keypoint constraints for robotic manipulation
+
+> Huang, W., Wang, C., Li, Y., Zhang, R., & Fei-Fei, L. (2024). Rekep: Spatio-temporal reasoning of relational keypoint constraints for robotic manipulation. _arXiv preprint arXiv:2409.01652_.
+
+- Main idea: ReKep tries to solve manipulation task by: 1. getting several 'keypoints' related to the task in the environment; 2. formulating the requirements for the success of the task as constraints of the relation between keypoints; 3. solving end-effector pose of robot
+- Keypoint extraction. Use DINOv2 + SAM to extract keypoints of a task. For instance, for the task of grasping a teapot and pouring water into a cup, the keypoint is teapot handler + teapot spout + cup position.
+- Manipulation task success requirements as constraints between keypoints. Still take tea pouring as an example. This task can be split into three subtasks: grasp the teapot; align the teapot spout right above the cup + pour. The keypoint constraints of the three subtasks are: the robot eef position should be close enough to the teapot handler (constraint between eef and keypoint 1); the teapot spout should be right above the cup position (constraint between keypoint 2 and 3); the line between the teapot handler and the spout should be rotated to enough angle so that the water can be poured out (constraint between keypoint 1 and 3, need to be satisfied to make the subtask considered done, so called '**subgoal constraint**'), and the eef should always hold the teapot handler during pouring (constraint between eef and keypoint 1, need to be satisfied during the subtask so called '**path constraint**').
+- Constraint formulation. Use keypoint visualized in the image + prompt feeding VLM to get constraints implemented in python. The interface is `def constraint(end_effector, keypoints)`.
+- Motion planning. First solve the subgoal eef, that is, find the eef pose so that the 'subgoal constraint' can be satisfied. Then solve the eef trajectory to achieve the subgoal eef so that the 'path constraints' and other collision-avoidance constraints can be satisfied.
+- My takeaway and utility
+
+  - Relationship between points can used to specify complicated 3-D things. For instance, mean value of some points can be used to specify a position of something; several keypoints together can be used to specify a surface. **MimicGen currently can't generate deformable object manipulation demo. Is it possible to do so by using several points as the 'relative object'**?
+  - A lot of collision-avoidance and point tracking methods/packages are introduced in the A.8 appendix and [github repo](https://github.com/huangwl18/ReKep?tab=readme-ov-file#real-world-deployment).
+  - **The biggest limitation, IMO, is that the low-level control policy given the keypoints are not very good. The keypoints extraction + constraint generation pipeline is very good**. The next thing is how to get a good low level control policy. MimicGen and imitation learning can be considered joining the pipeline!!!!
+
 # Fundamental Research of AI
 
 ### Were RNNs All We Needed?
