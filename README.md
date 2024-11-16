@@ -12,6 +12,7 @@
 
   1. **X-embodiment Shadow policy**: RGB third-vision human bahaviour -> humanoid bahaviour
   2. Data collection for behaviour cloning: Use shadow policy + human demonstration, humanoid get **egocentric binocular RGB camera** data of conducting a task.
+  3. Use key point representation as 'high-level' guidance (conditioning) of low level policy. The robot only knows how to achieve a paramatrized pose.
 - Some technical points
 
   1. During shadow policy training, the DoF of robot and human are diff. Need to map between paramatrization of these two. Then they can train policy using RL.
@@ -270,7 +271,7 @@
 
 - Try to use human egocentric data + teleoperation data to train robots. Huge amounts of methods to prevent distribution shifts. For example, use the same ego sensor (Aria) + mask the image with SAM2 + normalize actions.
 - Input masked human & robot ego images + human hand pose traj estimation + robot eef pose traj & joint position data (get through teleoperation). A transformer will encode all data. Loss is human pose prediction error, robot eef pose prediction error and robot joint position prediction error. The control is done in the joint space.
-- Co-training with human hand data benefits a lot. Distribution alignment matters a lot.
+- Co-training with human hand data benefits a lot. Distribution alignment matters a lot. **Other works (i.e: MimicPlay) use human data to train a planner to condition the low-level control policy suffers at generality**.
 - Utility: check the [Aria](https://facebookresearch.github.io/projectaria_tools/docs/intro) project, academic-use ego-centric hardware.
 
 # Fundamental Research of AI
