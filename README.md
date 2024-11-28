@@ -274,13 +274,21 @@
 - Co-training with human hand data benefits a lot. Distribution alignment matters a lot. **Other works (i.e: MimicPlay) use human data to train a planner to condition the low-level control policy suffers at generality**.
 - Utility: check the [Aria](https://facebookresearch.github.io/projectaria_tools/docs/intro) project, academic-use ego-centric hardware.
 
+### [Unpacking Failure Modes of Generative Policies: Runtime Monitoring of Consistency and Progress](https://arxiv.org/pdf/2410.04640)
+
+Let $\pi_t = \pi(a_{t+k:t+h-1 \mid t} \mid s_{t})$ and $\pi_{t+k} = \pi(a_{t+k:t+h-1 \mid t+k} \mid s_{t+k})$, if $D_{KL}(\pi_t,\pi_{t+k}) > \gamma$ where $\gamma$ is calibrated using successful trajectory, then the robot is deemed as 'prone to fail' and will raise a warning. Overlap exists because of setting in action chunk. The intuition is that successful robo trajectories are smoother and will have lower $D_{KL}(\pi_t,\pi_{t+k}) > \gamma$. Conformal prediction theory in statistics can provide some bounds. Combining it with VLM error detection (higher latency, but good at detecting some smoother error like confidently putting stuff in the wrong place), the total system works well. Combination is an 'OR' logic.
+
+![]($HOME/Downloads/UKiTb3dTQoHwe2xT6Tqct19SnYg.png)
+
+[Another researcher](https://rsluo.github.io) provides more rigorous and thorough analysis of robot OOD detection using conformal theory.
+
 # Fundamental Research of AI
 
 ### Scaling Rectified Flow Transformers for High-Resolution Image Synthesis
 
 > Esser, P., Kulal, S., Blattmann, A., Entezari, R., Müller, J., Saini, H., ... & Rombach, R. (2024, March). Scaling rectified flow transformers for high-resolution image synthesis. In _Forty-first International Conference on Machine Learning_.
 
-- This is the paper of stable diffusion 3. **It is a very good writing sample of a research paper on image generation**.
+- This is the paper of stable diffusion 3. **It is a very good writing sample of a research paper on image generation**. It proves the scalability of rectified flow in image generation tasks and it can outperform DiT and Unet. Also, it has a very well-written introduction on flow matching and diffusion. The code the the double stream block is [here](https://github.com/black-forest-labs/flux/blob/main/src/flux/modules/layers.py#L129-L191) and the sampling code is [here](https://github.com/black-forest-labs/flux/blob/main/src/flux/sampling.py#L241-L271).
 - Main points/tricks
 
   - Effective SNR ratio (noise scheduling) for rectified flow. The intuition is to give the timestep in the middle more weights. "Intuitively, however, the resulting velocity prediction target $\epsilon-x_0$ is more difficult for $t$ in the middle of $[0,1]$ , since for $t=0$, the optimal prediction is the mean of $p_1$, and for $t=1$ the optimal prediction is the mean of $p_0$. "
