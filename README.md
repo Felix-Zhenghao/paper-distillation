@@ -276,11 +276,41 @@
 
 ### [Unpacking Failure Modes of Generative Policies: Runtime Monitoring of Consistency and Progress](https://arxiv.org/pdf/2410.04640)
 
-Let $\pi_t = \pi(a_{t+k:t+h-1 \mid t} \mid s_{t})$ and $\pi_{t+k} = \pi(a_{t+k:t+h-1 \mid t+k} \mid s_{t+k})$, if $D_{KL}(\pi_t,\pi_{t+k}) > \gamma$ where $\gamma$ is calibrated using successful trajectory, then the robot is deemed as 'prone to fail' and will raise a warning. Overlap exists because of setting in action chunk. The intuition is that successful robo trajectories are smoother and will have lower $D_{KL}(\pi_t,\pi_{t+k}) > \gamma$. Conformal prediction theory in statistics can provide some bounds. Combining it with VLM error detection (higher latency, but good at detecting some smoother error like confidently putting stuff in the wrong place), the total system works well. Combination is an 'OR' logic.
+Let $\pi_t = \pi(a_{t+k:t+h-1 \mid t} \mid s_{t})$ and $\pi_{t+k} = \pi(a_{t+k:t+h-1 \mid t+k} \mid s_{t+k})$, if $D_{KL}(\pi_t,\pi_{t+k}) > \gamma$ where $\gamma$ is calibrated using successful trajectory, then the robot is deemed as 'prone to fail' and will raise a warning. Overlap exists because of setting in action chunk. The intuition is that successful robo trajectories are smoother and will have lower $D_{KL}(\pi_t,\pi_{t+k})$. Conformal prediction theory in statistics can provide some bounds. Combining it with VLM error detection (higher latency, but good at detecting some smoother error like confidently putting stuff in the wrong place), the total system works well. Combination is an 'OR' logic.
 
 ![]($HOME/Downloads/UKiTb3dTQoHwe2xT6Tqct19SnYg.png)
 
 [Another researcher](https://rsluo.github.io) provides more rigorous and thorough analysis of robot OOD detection using conformal theory.
+
+### [Scaling Cross-Embodied Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation ](https://arxiv.org/pdf/2408.11812)
+
+130M paras. One observation encoder is set for each type of camera pose. One readout token is set for each action in the action chunk. After each timestep obs, a sequence of readout tokens is added. One action head (action decoder) is set for each downstream embodiment. So the obs encoder and action decoder are like MoE. Each readout token is "summarization of the observation of the timestep to conduct action of a specific future timestep". Dataset see appendix A.
+
+**Expriment**. All evaluation tasks are in-distribution, so no fine-tune is needed. Comparison is done between best prior X-embodiment model and train the same model with task-specific data only. For manipulation tasks, the success rates are just bad.
+
+![]($HOME/Downloads/BcNCb9DDQoEs3VxM1QycOuNFnbf.png)
+
+### [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://arxiv.org/pdf/2409.20537)
+
+1B paras. The "read out tokens" are added before fed to the main transformer backbone. Pro and vision obs are first encoded by some encoder and then embedded as fixed length of sequence through attention. This is much more memory efficient compared to the work above because it avoid a lot of masking. Dataset see A.1 appendix.
+
+**Experiment**. No analysis of whether the test settings are in-distribution or OOD. Tests are done in sim and real. First test suite compare different fine-tune strategies like froze the trunk or not. Second test suite compare the fully fine-tuned HPT with other model.
+
+![]($HOME/Downloads/E7pdbImaSo8pPOxbN0LcezMDnTd.png)
+
+### [π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/pdf/2410.24164)
+
+3B paras. Closed-source training & post training data. Training data is very diversed and include mistake recovery. Flow matching for action head, transfusion & MM-DiT architecture mix, pretrained VLM for obs encoding. Unified action space (18-dim) and zero pad action of embodiment with lower dim action.
+
+![]($HOME/Downloads/UClHbyNpzoj8z8xjMETcRJ7Xnrc.png)
+
+**Experiment**:
+
+- **How well does π0 perform after ****pre-training ****on a variety of tasks that are present in the pre-training data?** > 90% even for deformable object manipulation. Significantly outperform previous methods like OpenVLA or Octo. Also has ~10% absolute success rate gain compared to model trained with task-specific data.
+- **How well does π0 follow language commands? **VLM is essential to this. Model with VLM can follow language command much better and thus can benefit from human experts' intermediate command (e.g. put what to where).
+- **How does π0 adapt to new unseen dexterous manipulation tasks that require new behaviour?** ~ 5 hours of fine-tuning data is needed for each task. On all tasks $\pi_0$ outperforms or is comparable with model trained only with task-specific data. It outperforms any other model like OpenVLA.
+- **Can π0 be adapted to complex, multi-stage tasks?** "For some of these tasks, data is present in pre-training, but fine-tuning is required to attain mastery. For some, no data is present in pre-training." "Note that many of these more difficult tasks show a very large improvement from using the pre-trained model, indicating that pre-training is especially useful with harder tasks."
+  ![]($HOME/Downloads/TdSHbjdpiopC1uxVC1kcuJtenjA.png)
 
 # Fundamental Research of AI
 
