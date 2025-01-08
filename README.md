@@ -363,3 +363,12 @@ Let $\pi_t = \pi(a_{t+k:t+h-1 \mid t} \mid s_{t})$ and $\pi_{t+k} = \pi(a_{t
 - Main Idea
 
   - Define a flow $\phi_t{(x)}$ , where $\phi_o(x)=x$ . Define a time variant vector field $\frac{d}{dt}\phi_t(x)$ . Then, starting from point $x$ sampled from a known distribution, if we follow the vector field (the dynamic of the flow), we can **gradually **move into a new distribution.
+
+### Accelerating Reinforcement Learning with Learned Skill Priors
+
+> Pertsch, K., Lee, Y., & Lim, J. (2021, October). Accelerating reinforcement learning with learned skill priors. In _Conference on robot learning_ (pp. 188-204). PMLR.
+
+- Learn a skill prior $p(z_t\mid s_t)$to guide exploration and policy learning in downstream RL, where $z_t$represents a series of action with fixed horizon $H$.
+- The skill prior will be learned when learning encoder $q(z\mid a)$. The skill prior is guassian distribution.
+- The downstream RL is hierarchical RL. The high-level action space is the skill space $\mathcal{Z}$. The policy is $\pi_{\theta}(z\mid s_t)$. Then $z$is decoded (rolled out) into $H$steps of action.
+- During RL, skill prior keeps constraining the learned policy $\pi_{\theta}(z\mid s_t)$ so that it is not encouraged to shift away from the skill prior.
