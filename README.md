@@ -4,13 +4,14 @@
 
 #### Papers of 2025
 
-- Beyond Sight: Finetuning Generalist Robot Policies with Heterogeneous Sensors via Language Grounding [[arxiv](https://arxiv.org/abs/2501.04693)][[website](https://fuse-model.github.io)][dataset✅][model✅]. Finetune a policy pretrained only on images with a small dataset with more modalities like touch with the help of language.
+- **Beyond Sight**: Finetuning Generalist Robot Policies with Heterogeneous Sensors via Language Grounding [[arxiv](https://arxiv.org/abs/2501.04693)][[website](https://fuse-model.github.io)][dataset✅][model✅]. Finetune a policy pretrained only on images with a small dataset with more modalities like touch with the help of language.
 - Learning to Transfer Human Hand Skills for Robot Manipulations [[arxiv](https://arxiv.org/abs/2501.04169)][[website](https://rureadyo.github.io/MocapRobot/)][dataset✅]. Find the mapping between the robot hand actions and human hand motion (mocap) to achieve the same target object motion. Have separate models for each object.
-- Depth Any Camera: Zero-Shot Metric Depth Estimation from Any Camera [[arxiv](https://arxiv.org/abs/2501.02464)][[website](https://yuliangguo.github.io/depth-any-camera/)]. Able to infer depth of large FoV images without losing FoV using ERP image representation. Experiments are mainly done on large scenes rather than table-top.
+- **Depth Any Camera**: Zero-Shot Metric Depth Estimation from Any Camera [[arxiv](https://arxiv.org/abs/2501.02464)][[website](https://yuliangguo.github.io/depth-any-camera/)]. Able to infer depth of large FoV images without losing FoV using ERP image representation. Experiments are mainly done on large scenes rather than table-top.
 
 #### Papers of 2024
 
-- EXTRACT: Efficient Policy Learning by Extracting Transferrable Robot Skills from Offline Data [[arxiv](https://arxiv.org/abs/2406.17768)][[website](https://www.jessezhang.net/projects/extract/)]. Extract semantic skill chunks from offline data w/o human supervision. Each obs has embedding showing the _change_ of arm and obj compared with the initial state: $e_t=VLM(s_t)-VLM(s_o)$. Emb's then are clustered.
+- **EXTRACT**: Efficient Policy Learning by Extracting Transferrable Robot Skills from Offline Data [[arxiv](https://arxiv.org/abs/2406.17768)][[website](https://www.jessezhang.net/projects/extract/)]. Extract semantic skill chunks from offline data w/o human supervision. Each obs has embedding showing the _change_ of arm and obj compared with the initial state: $e_t=VLM(s_t)-VLM(s_o)$. Emb's then are clustered.
+- **ManiBox**: Enhancing Spatial Grasping Generalization via Scalable Simulation Data Generation [[arxiv](https://arxiv.org/abs/2411.01850)][[website](https://thkkk.github.io/manibox)][dataset✅]. Use bbox as a 3D hint to enable zero-shot sim-to-real transfer of gripper grasping regardless of obj position and visual scene. IL plateaus at 90% success rate.
 
 #### Earlier Papers
 
