@@ -2,6 +2,12 @@
 
 > To see paper recommendation level and tags, visit the doc on Lark [here](https://ndro4zkb6p.feishu.cn/docx/FaBXdERDvoleXDxSiMXcMBegnvd?from=from_copylink).
 
+#### Papers of 2025
+
+- Beyond Sight: Finetuning Generalist Robot Policies with Heterogeneous Sensors via Language Grounding [[arxiv](https://arxiv.org/abs/2501.04693)][[website](https://fuse-model.github.io)][dataset✅][model✅]. Finetune a policy pretrained only on images with a small dataset with more modalities like touch with the help of language.
+- Learning to Transfer Human Hand Skills for Robot Manipulations [[arxiv](https://arxiv.org/abs/2501.04169)][[website](https://rureadyo.github.io/MocapRobot/)][dataset✅]. Find the mapping between the robot hand actions and human hand motion (mocap) to achieve the same target object motion. Have separate models for each object.
+- Depth Any Camera: Zero-Shot Metric Depth Estimation from Any Camera [[arxiv](https://arxiv.org/abs/2501.02464)][[website](https://yuliangguo.github.io/depth-any-camera/)]. Able to infer depth of large FoV images without losing FoV using ERP image representation. Experiments are mainly done on large scenes rather than table-top.
+
 # Robotics
 
 ### HumanPlus: Humanoid Shadowing and Imitation from Humans
