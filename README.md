@@ -12,6 +12,7 @@
 
 - **EXTRACT**: Efficient Policy Learning by Extracting Transferrable Robot Skills from Offline Data [[arxiv](https://arxiv.org/abs/2406.17768)][[website](https://www.jessezhang.net/projects/extract/)]. Extract semantic skill chunks from offline data w/o human supervision. Each obs has embedding showing the _change_ of arm and obj compared with the initial state: $e_t=VLM(s_t)-VLM(s_o)$. Emb's then are clustered.
 - **ManiBox**: Enhancing Spatial Grasping Generalization via Scalable Simulation Data Generation [[arxiv](https://arxiv.org/abs/2411.01850)][[website](https://thkkk.github.io/manibox)][dataset✅]. Use bbox as a 3D hint to enable zero-shot sim-to-real transfer of gripper grasping regardless of obj position and visual scene. IL plateaus at 90% success rate.
+- 🌟Is Value Learning Really the Main Bottleneck in Offline RL [[arxiv](https://arxiv.org/abs/2406.09329)][[website](https://seohong.me/projects/offrl-bottlenecks/)]. Value function is not a bottleneck for offline RL. How to extract good policy from value function is. Also, test-time states that are unseen in training time is another main issue.
 
 #### Earlier Papers
 
