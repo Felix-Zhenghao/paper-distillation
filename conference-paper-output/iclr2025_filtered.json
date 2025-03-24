@@ -1,0 +1,290 @@
+[
+    {
+        "title": "ProtComposer: Compositional Protein Structure Generation with 3D Ellipsoids",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "protein design;diffusion model;controllable generation;drug discovery;proteins;biology"
+    },
+    {
+        "title": "OmniRe: Omni Urban Scene Reconstruction",
+        "status": "Spotlight",
+        "rating": 7.333333333333333,
+        "keywords": "Gaussians Splatting;Neural Rendering;Dynamic Scene Reconstruction;Autonomous Driving"
+    },
+    {
+        "title": "RelitLRM: Generative Relightable Radiance for Large Reconstruction Models",
+        "status": "Spotlight",
+        "rating": 7.333333333333333,
+        "keywords": "Relightable reconstruction;Inverse Rendering;Generative Relighting"
+    },
+    {
+        "title": "ND-SDF: Learning Normal Deflection Fields for High-Fidelity Indoor Reconstruction",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Normal Deflection Fields;High-Fidelity Indoor Reconstruction"
+    },
+    {
+        "title": "NeuralPlane: Structured 3D Reconstruction in Planar Primitives with Neural Fields",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "3D Reconstruction;3D Scene Understanding;Scene Abstraction;Neural Rendering"
+    },
+    {
+        "title": "Geometry-aware RL for Manipulation of Varying Shapes and Deformable Objects",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "Robotic Manipulation;Equivariance;Graph Neural Networks;Reinforcement Learning;Deformable Objects"
+    },
+    {
+        "title": "Simplifying Deep Temporal Difference Learning",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Reinforcement Learning;TD;Theory;Q-learning;Parallelisation;Network Normalisation"
+    },
+    {
+        "title": "TetSphere Splatting: Representing High-Quality Geometry with Lagrangian Volumetric Meshes",
+        "status": "Oral",
+        "rating": 7.6,
+        "keywords": "geometry representation;3D modeling"
+    },
+    {
+        "title": "DenseMatcher: Learning 3D Semantic Correspondence for Category-Level Manipulation from One Demo",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "robotics;correspondence;computer vision;3D vision"
+    },
+    {
+        "title": "SplatFormer: Point Transformer for Robust 3D Gaussian Splatting",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Novel View Synthesis;Gaussian Splatting;Point cloud modeling"
+    },
+    {
+        "title": "Learning Closed-Loop Concept-Guided Policies from Unlabeled Demonstrations",
+        "status": "Spotlight",
+        "rating": 7.25,
+        "keywords": "Self-Supervised Manipulation Concept Discovery;Concept-Guided Policy for Robotic Tasks"
+    },
+    {
+        "title": "Multi-Robot Motion Planning with Diffusion Models",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Multi-Agent Planning;Robotics;Generative Models"
+    },
+    {
+        "title": "Open-YOLO 3D: Towards Fast and Accurate Open-Vocabulary 3D Instance Segmentation",
+        "status": "Oral",
+        "rating": 7.8,
+        "keywords": "Open Vocabulary;3D point cloud instance segmentation"
+    },
+    {
+        "title": "High-Dynamic Radar Sequence Prediction for Weather Nowcasting Using Spatiotemporal Coherent Gaussian Representation",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "3D Gaussian;Dynamic Reconstruction;Radar Prediction;Weather Nowcasting"
+    },
+    {
+        "title": "Student-Informed Teacher Training",
+        "status": "Spotlight",
+        "rating": 5.75,
+        "keywords": "Reinforcement Learning;Imitation Learning;Robotics"
+    },
+    {
+        "title": "Poison-splat: Computation Cost Attack on 3D Gaussian Splatting",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "gaussian splatting;energy-latency attack;data poisoning attack"
+    },
+    {
+        "title": "Grounding Video Models to Actions through Goal Conditioned Exploration",
+        "status": "Spotlight",
+        "rating": 7.333333333333333,
+        "keywords": "Embodied AI;Decision Making;Robotics;Video Model"
+    },
+    {
+        "title": "Atlas Gaussians Diffusion for 3D Generation",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "3D generation;diffusion;3D Gaussian Splatting"
+    },
+    {
+        "title": "ShEPhERD: Diffusing shape, electrostatics, and pharmacophores for bioisosteric drug design",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "3D molecular generation;drug design;molecules"
+    },
+    {
+        "title": "LoRA3D: Low-Rank Self-Calibration of 3D Geometric Foundation models",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "3D foundation model;model specialization;robust optimization;low rank adaptation;self-supervised learning"
+    },
+    {
+        "title": "Following the Human Thread in Social Navigation",
+        "status": "Spotlight",
+        "rating": 7.333333333333333,
+        "keywords": "Embodied AI;Social Navigation;Human Trajectories"
+    },
+    {
+        "title": "TOP-ERL: Transformer-based Off-Policy Episodic Reinforcement Learning",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Value of sequences of actions;Reinforcement Learning;Transformer;Robot Manipulation;Movement Primitives."
+    },
+    {
+        "title": "Moner: Motion Correction in Undersampled Radial MRI with Unsupervised Neural Representation",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "MRI Reconstruction;Motion Correction;Neural Representation;NeRF;Unsupervised Learning"
+    },
+    {
+        "title": "No Pose, No Problem: Surprisingly Simple 3D Gaussian Splats from Sparse Unposed Images",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "3D Gaussian Splatting;Pose Free;Pose Estimation;Novel View Synthesis;3D Reconstruction"
+    },
+    {
+        "title": "LVSM: A Large View Synthesis Model with Minimal 3D Inductive Bias",
+        "status": "Oral",
+        "rating": 7.666666666666667,
+        "keywords": "novel view synthesis;transformer;large model"
+    },
+    {
+        "title": "SRSA: Skill Retrieval and Adaptation for Robotic Assembly Tasks",
+        "status": "Spotlight",
+        "rating": 7.333333333333333,
+        "keywords": "Robotic Assembly Tasks; Skill Retrieval; Skill Adaptation; Sim-to-real Transfer; Reinforcement Learning Fine-tuning;"
+    },
+    {
+        "title": "Co$^{\\mathbf{3}}$Gesture: Towards Coherent Concurrent Co-speech 3D Gesture Generation with Interactive Diffusion",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "3D co-speech gesture generation;human motion modeling"
+    },
+    {
+        "title": "Perm: A Parametric Representation for Multi-Style 3D Hair Modeling",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Hair Modeling;Parametric Models;Generative Models"
+    },
+    {
+        "title": "EmbodiedSAM: Online Segment Any 3D Thing in Real Time",
+        "status": "Oral",
+        "rating": 7.666666666666667,
+        "keywords": "3d instance segmentation; online 3d scene segmentation"
+    },
+    {
+        "title": "MOS: Model Synergy for Test-Time Adaptation on LiDAR-Based 3D Object Detection",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "Test-Time Adaptation;3D Object Detection"
+    },
+    {
+        "title": "Latent Bayesian Optimization via Autoregressive Normalizing Flows",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "Bayesian optimization;normalizing flow"
+    },
+    {
+        "title": "Generating Freeform Endoskeletal Robots",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "co-design;agent design;robots;morphology;evolution;locomotion"
+    },
+    {
+        "title": "Geometric Inductive Biases of Deep Networks: The Role of Data and Architecture",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Optimization;Deep Neural Networks;Deep Learning;Deep Learning Theory;Machine Learning Theory"
+    },
+    {
+        "title": "Vision Language Models are In-Context Value Learners",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "robot learning;vision-language model;value estimation;manipulation"
+    },
+    {
+        "title": "Multimodality Helps Few-Shot 3D Point Cloud Semantic Segmentation",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "few-shot 3D point cloud semantic segmentation;multimodality"
+    },
+    {
+        "title": "Instant Policy: In-Context Imitation Learning via Graph Diffusion",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "In-context Imitation Learning;Robotic Manipulation;Graph Neural Networks;Diffusion Models"
+    },
+    {
+        "title": "MetaUrban: An Embodied AI Simulation Platform for Urban Micromobility",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Micromobility;Simulation Environment;Embodied AI"
+    },
+    {
+        "title": "MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion",
+        "status": "Spotlight",
+        "rating": 7.2,
+        "keywords": "3D computer vision;structure from motion;depth estimation"
+    },
+    {
+        "title": "gRNAde: Geometric Deep Learning for 3D RNA inverse design",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "RNA Structure;RNA Design;Geometric Deep Learning;Graph Neural Networks"
+    },
+    {
+        "title": "Predictive Inverse Dynamics Models are Scalable Learners for Robotic Manipulation",
+        "status": "Oral",
+        "rating": 7.5,
+        "keywords": "Robotic Manipulation ; Pre-training ; Visual Foresight ; Inverse Dynamics ; Large-scale robot dataset"
+    },
+    {
+        "title": "LLaVA-NeXT-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models",
+        "status": "Spotlight",
+        "rating": 7.333333333333333,
+        "keywords": "large language model;multimodal learning;interleaved image-text"
+    },
+    {
+        "title": "Data Scaling Laws in Imitation Learning for Robotic Manipulation",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "Data Scaling Laws;Imitation Learning;Robotic Manipulation"
+    },
+    {
+        "title": "On Scaling Up 3D Gaussian Splatting Training",
+        "status": "Oral",
+        "rating": 8.0,
+        "keywords": "Gaussian Splatting;Machine Learning System;Distributed Training"
+    },
+    {
+        "title": "Retri3D: 3D Neural Graphics Representation Retrieval",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Neural Graphics Representation; 3D Retrieval; Database"
+    },
+    {
+        "title": "4K4DGen: Panoramic 4D Generation at 4K Resolution",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "4D Generation;Panoramic Video;Panoramic Gaussian Splatting"
+    },
+    {
+        "title": "On the Expressiveness of Rational ReLU Neural Networks With Bounded Depth",
+        "status": "Spotlight",
+        "rating": 7.4,
+        "keywords": "expressive power;depth;exact representations;ReLU networks;mixed volumes;lattice polytopes;number theory"
+    },
+    {
+        "title": "GOPS: Learning Generative Object Priors for Unsupervised 3D Instance Segmentation",
+        "status": "Spotlight",
+        "rating": 7.333333333333333,
+        "keywords": "3D scene object segmentation;unsupervised learning"
+    },
+    {
+        "title": "Stem-OB: Generalizable Visual Imitation Learning with Stem-Like Convergent Observation through Diffusion Inversion",
+        "status": "Spotlight",
+        "rating": 7.5,
+        "keywords": "Robotics;Imitation Learning;Visual Imitation Learning;Robustness;Diffusion Model;Diffusion Inversion"
+    }
+]
